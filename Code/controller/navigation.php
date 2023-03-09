@@ -1,0 +1,66 @@
+<?php
+/**
+ * @file      navigation.php
+ * @brief     This controller is designed to manage all navigation aspect (view controller view)
+ * @author    Created by Pascal.BENZONANA
+ * @author    Updated by Nicolas.GLASSEY
+ * @version   13-APR-2020
+ */
+
+/**
+ * @brief This function is designed to redirect the user to the home page (depending on the action received by the index)
+ */
+function home()
+{
+    require "view/home.php";
+}
+
+/**
+ * Call the details events with the correct event
+ */
+function detailEvent($event_id){
+    require "model/eventManager.php";
+    $event = getAnEventWithJoin($event_id);
+    require "view/Detail.php";
+}
+
+/**
+ * Call profil page
+ */
+function profil(){
+
+    require "view/profil.php";
+
+}
+
+/**
+ * @brief This function is designed to inform the user that the resource requested doesn't exist (i. e. if the user modify the url manually)
+ */
+function lost()
+{
+    require "view/lost.php";
+}
+
+/**
+ * Display form to create Events
+ */
+function displayCreateEvents() {
+    require "view/createEvent.php";
+
+}
+
+/**
+ * Display form to edit Events
+ */
+function displayEditEvents(){
+    require "view/updateEvents.php";
+}
+
+/**
+ * Display form to modifiy our password
+ */
+function displayFormPwd(){
+    require "view/formPassword.php";
+}
+
+
